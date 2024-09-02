@@ -1,5 +1,6 @@
 package com.example.learnjetpack_compose.ui.components
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,7 +22,7 @@ import com.example.learnjetpack_compose.ui.theme.GreyTextFieldColor
 @Composable
 fun TextInput(placeholder: @Composable() (() -> Unit), value: String, onValueChange: (String) -> Unit, radiusSize: Dp = 8.dp, paddingTop: Dp = 12.dp, heightInput: Dp = 50.dp, keyboardType: KeyboardType = KeyboardType.Text, visualTransformation: VisualTransformation = VisualTransformation.None)  {
     OutlinedTextField(
-        modifier = Modifier.padding(top = paddingTop).height(heightInput),
+        modifier = Modifier.fillMaxWidth().padding(top = paddingTop, start = 24.dp, end = 24.dp).height(heightInput),
         shape = RoundedCornerShape(radiusSize),
         placeholder = placeholder,
         keyboardOptions = KeyboardOptions(

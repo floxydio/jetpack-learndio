@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import com.example.learnjetpack_compose.ui.navigation.AppNavHost
 import com.example.learnjetpack_compose.ui.theme.Learnjetpack_composeTheme
 import androidx.compose.ui.platform.LocalDensity
+import androidx.navigation.compose.rememberNavController
 
 
 class MainActivity : ComponentActivity() {
@@ -29,7 +30,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Learnjetpack_composeTheme {
-                AppNavHost()
+                AppNavHost(
+                    navController = rememberNavController()
+                )
 
             }
         }
@@ -44,7 +47,9 @@ fun GreetingPreview() {
         Box(
             modifier = Modifier.safeDrawingPadding()
         ) {
-            AppNavHost()
+            AppNavHost(
+                navController = rememberNavController()
+            )
         }
     }
 }
